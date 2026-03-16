@@ -1,0 +1,40 @@
+<p>
+  Each FDO profile MUST fulfill the following requirements:
+</p>
+An FDO Profile is a template for FDO records
+<ul>
+<li>
+  [R4-1] An FDO profile (short: profile) is a machine-readable template that MAY be instantiated by FDO records. It defines a list of attribute definitions that MUST be contained in any FDO record which instantiates the profile, according to the cardinalities specified in the attribute definitions (see section 5.5, especially [R5-7]). 
+  [R4-2] An attribute definition is contained in a profile’s list of attribute definitions (as described in [R4-1]) if and only if the profile contains an attribute, where the attribute’s
+  <ul>
+    <li>
+      first element is either 0.FDO/Attribute or FDO_Attribute, and
+    </li>
+    <li>
+      the second element (value) contains a PID resolving to the attribute definition. 
+    </li>
+  </ul>
+</li>
+<li>
+  [R4-3] Each profile MUST at least contain the mandatory attributes 0.FDO/Type, 0.FDO/Profile, and 0.FDO/Data as defined by the FDO Forum. It can further contain attributes from the list of optional attributes as defined by FDO Forum (see table X in appendix), or community-specified attributes, as long as these are identified by PIDs. 
+</li>
+<li>
+  [R4-4] An FDO record MAY contain additional attributes whose attribute definitions are not listed in the profile it instantiates, although we strongly recommend to avoid this whenever possible.
+</li>
+<li>
+  [R4-5] Each FDO record MUST comply with the profile(s) it instantiates, which means that it successfully validates (see [R8-1]) at least upon creation and update against the profile(s).
+</li>
+</ul>
+
+The FDO profile definition profile (0.FDO/ProfileDef) is a template for any FDO profile 
+<ul>
+<li>
+  [R4-6] Each profile is itself represented as an FDO. Hence, it is identified by a PID that resolves into an FDO record consisting of attributes.
+</li>
+<li>
+  [R4-7] The FDO profile definition profile defines a list of attribute definitions that MUST be instantiated in the FDO record of each profile, according to the cardinalities in the attribute definitions (i.e., each profile instantiates the FDO profile definition profile; and the FDO profile definition profile instantiates itself). The FDO profile definition profile is defined by the FDO Forum, has the PID 0.FDO/ProfileDef and contains the list of attribute definitions shown in Table 1. 
+</li>
+<li>
+  [R4-8] Any profile and all attribute definitions it contains MUST be defined in open registries. Special rules apply when profiles should be updated, see [R11-3] - [R11-6]. </li>
+</li>
+</ul>
