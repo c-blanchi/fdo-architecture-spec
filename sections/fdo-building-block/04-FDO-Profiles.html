@@ -8,11 +8,12 @@ An FDO Profile is a template for <a>FDO Record</a>s:
       Record</a>s. It defines a list of attribute definitions that MUST be contained in any <a>FDO Record</a> which
     instantiates the profile, according to the cardinalities specified in the attribute definitions (see <a
       href="#attributes"></a>, especially [R5-7]).
-    [R4-2] An attribute definition is contained in a profile’s list of attribute definitions (as described in [R4-1]) if
+  <dt>[R4-2]</dt>
+  <dd>An attribute definition is contained in a profile’s list of attribute definitions (as described in [R4-1]) if
     and only if the profile contains an attribute, where the attribute’s
     <ul>
       <li>
-        first element is either <i>0.FDO/Attribute</i>  or FDO_Attribute, and
+        first element is either <i>0.FDO/Attribute</i> or FDO_Attribute, and
       </li>
       <li>
         the second element (value) contains a PID resolving to the attribute definition.
@@ -20,7 +21,8 @@ An FDO Profile is a template for <a>FDO Record</a>s:
     </ul>
   </dd>
   <dt>[R4-3]</dt>
-  <dd>Each profile MUST at least contain the mandatory attributes <i>0.FDO/Type</i> , <i>0.FDO/Profile</i> , and <i>0.FDO/Data</i>  as
+  <dd>Each profile MUST at least contain the mandatory attributes <i>0.FDO/Type</i> , <i>0.FDO/Profile</i> , and
+    <i>0.FDO/Data</i> as
     defined by the FDO Forum. It can further contain attributes from the list of optional attributes as defined by FDO
     Forum (see table X in appendix), or community-specified attributes, as long as these are identified by PIDs.
   </dd>
@@ -34,7 +36,7 @@ An FDO Profile is a template for <a>FDO Record</a>s:
   </dd>
 </dl>
 
-The FDO profile definition profile (0.FDO/ProfileDef) is a template for any FDO profile
+The FDO profile definition profile (<i>0.FDO/ProfileDef</i>) is a template for any FDO profile
 <dl>
   <dt>[R4-6]</dt>
   <dd>Each profile is itself represented as an FDO. Hence, it is identified by a PID that resolves into an <a>FDO
@@ -44,12 +46,13 @@ The FDO profile definition profile (0.FDO/ProfileDef) is a template for any FDO 
   <dd>The FDO profile definition profile defines a list of attribute definitions that MUST be instantiated in the
     <a>FDO Record</a> of each profile, according to the cardinalities in the attribute definitions (i.e., each profile
     instantiates the FDO profile definition profile; and the FDO profile definition profile instantiates itself). The
-    FDO profile definition profile is defined by the FDO Forum, has the PID <i>0.FDO/Profile</i> Def and contains the list of
+    FDO profile definition profile is defined by the FDO Forum, has the PID <i>0.FDO/Profile</i> Def and contains the
+    list of
     attribute definitions shown in Table 1.
   </dd>
   <dt>[R4-8]</dt>
   <dd>Any profile and all attribute definitions it contains MUST be defined in open registries. Special rules apply
-    when profiles should be updated, see <a href="#r11-3"></a> - <a href="#r11-6"></a>.
+    when profiles should be updated, see <a href="#r11-3">R11-3</a> - <a href="#r11-6">R11-6</a>.
   </dd>
 </dl>
 
@@ -60,9 +63,10 @@ mechanism is defined as follows:
   <dt>[R4-9]</dt>
   <dd>The root profile defines a list of attribute definitions that MUST be instantiated in any <a>FDO Record</a>
     (i.e., any FDO MUST validate against the root profile; and the root profile also validates itself). It is the
-    minimal profile in the sense that it contains the mandatory attribute definitions <i>0.FDO/Type</i> , <i>0.FDO/Profile</i>  and
-    <i>0.FDO/Data</i>  that must be instantiated in any FDO. The root profile is defined by the FDO Forum, has the PID
-    <i>0.FDO/Root</i>  and contains the list of attribute definitions shown in Table 2.
+    minimal profile in the sense that it contains the mandatory attribute definitions <i>0.FDO/Type</i> ,
+    <i>0.FDO/Profile</i> and
+    <i>0.FDO/Data</i> that must be instantiated in any FDO. The root profile is defined by the FDO Forum, has the PID
+    <i>0.FDO/Root</i> and contains the list of attribute definitions shown in Table 2.
   </dd>
   <dt>[R4-10]</dt>
   <dd>Profiles SHOULD be extended by other profiles whenever semantically appropriate. The root profile serves as
@@ -70,19 +74,22 @@ mechanism is defined as follows:
     of its children.
   </dd>
   <dt>[R4-11]</dt>
-  <dd>To extend a profile P<sub>1</sub> by a profile P<sub>2</sub>, the profile P<sub>2</sub> MUST contain an attribute where
+  <dd>To extend a profile P<sub>1</sub> by a profile P<sub>2</sub>, the profile P<sub>2</sub> MUST contain an attribute
+    where
     <ul>
-      <li>the first element is <i>0.FDO/ExtendsProfile</i>  or the string FDO_Extends_Profile, and</li>
+      <li>the first element is <i>0.FDO/ExtendsProfile</i> or the string FDO_Extends_Profile, and</li>
       <li>the value is the PID identifying P<sub>1</sub>.</li>
     </ul>
-    In this case, P<sub>2</sub> inherits all attribute definitions listed in P<sub>1</sub>, as well as all attribute definitions that are
-    listed in profiles that are extended by P<sub>1</sub>. P<sub>2</sub> MAY add further attribute definitions by instantiating
+    In this case, P<sub>2</sub> inherits all attribute definitions listed in P<sub>1</sub>, as well as all attribute
+    definitions that are
+    listed in profiles that are extended by P<sub>1</sub>. P<sub>2</sub> MAY add further attribute definitions by
+    instantiating
     <i>0.FDO/Attribute</i> in its <a>FDO Record</a>. The resulting inheritance hierarchy MUST be conflict-free and
     representable by a directed acyclic graph.
   </dd>
   <dt>[R4-12]</dt>
   <dd>To validate an <a>FDO Record</a> against a profile that uses the extension mechanism, all profiles in the
     extension hierarchy MUST be resolved until a profile is reached that does not extend another profile (which may be
-    <i>0.FDO/Root</i>  or another profile).
+    <i>0.FDO/Root</i> or another profile).
   </dd>
 </dl>
