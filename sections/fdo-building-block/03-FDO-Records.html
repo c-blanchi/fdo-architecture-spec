@@ -1,49 +1,55 @@
 <p>
-Each <dfn>FDO Record</dfn> MUST fulfill the following requirements:
+  Each <dfn>FDO Record</dfn> MUST fulfill the following requirements:
 </p>
 An FDO Record consists of tuples (called “FDO attributes”)
-<ul>
-<li>
-  [R3-1] A PID identifying an FDO resolves into a structured information record, called the FDO Record.
-</li>
-<li>
-  [R3-2] The FDO Record consists of a finite number of tuples (called FDO attributes, short: attributes) that can be interpreted by a machine. The limit for the number of tuples per record depends on the implementation.
-</li>
-</ul>
-
-A FDO Record MUST contain the attributes 0.FDO/Type, 0.FDO/Profile and 0.FDO/Data
-<ul>
-<li>
-  [R3-3] Each FDO Record MUST link to at least one <a>FDO Profile</a>, which it complies to, via the designated attribute 0.FDO/Profile in its FDO Record. To link multiple FDO profiles, the attribute 0.FDO/Profile MAY be repeated multiple times in the FDO Record.
-  <ul>
-  <li>
-    The first element of such a tuple representing the FDO’s profile is either the PID 0.FDO/Profile, or the string FDO_Profile. 
-  </li>
-  <li>
-    The second element is a PID referencing an FDO profile.
-  </li>
-  </ul>
-</li>
-<li>
-  [R3-4] Each FDO MUST specify its FDO type via the designated attribute 0.FDO/Type in its FDO Record. To link multiple FDO types, the attribute 0.FDO/Type MAY be repeated multiple times in the FDO Record.
-  <ul>
-  <li>
-    The first element of such a tuple representing the FDO’s type is either the PID 0.FDO/Type, or the string FDO_Type. 
-  </li>
-  <li>
-    The 0.FDO/Type attribute follows the attribute referencing mechanism as defined in section 7.4.
-  </li>
-  </ul>
-</li>
-<li>
-  [R3-5] Each FDO MUST contain the designated attribute 0.FDO/Data in its FDO Record at least once. The 0.FDO/Data attribute points to data associated with the FDO. 
-  <ul>
-  <li>
-  The first element of such a tuple representing the FDO’s data is either the PID 0.FDO/Data, or the string FDO_Data. 
-  </li>
-  <li>
-  The 0.FDO/Data attribute follows the attribute referencing mechanism as defined in section 7.4.
-  </li>
-  </ul>
-</li>
-</ul>
+<dl>
+  <dt>[R3-1]</dt>
+  <dd>A PID identifying an FDO resolves into a structured information record, called the FDO Record.</dd>
+  <dt>[R3-2]</dt>
+  <dd>The FDO Record consists of a finite number of tuples (called FDO attributes, short: attributes) that can be
+    interpreted by a machine. The limit for the number of tuples per record depends on the implementation.</dd>
+</dl>
+A FDO Record MUST contain the attributes <i>0.FDO/Type</i>, <i>0.FDO/Profile</i> and <i>0.FDO/Data</i>
+<dl>
+  <dt>[R3-3]</dt>
+  <dd>Each FDO Record MUST link to at least one <a>FDO Profile</a>, which it complies to, via the designated
+    attribute <i>0.FDO/Profile</i>  in its FDO Record. To link multiple FDO profiles, the attribute <i>0.FDO/Profile</i>  MAY be
+    repeated multiple times in the FDO Record.
+    <ul>
+      <li>
+        The first element of such a tuple representing the FDO’s profile is either the PID <i>0.FDO/Profile</i> , or the string
+        FDO_Profile.
+      </li>
+      <li>
+        The second element is a PID referencing an FDO profile.
+      </li>
+    </ul>
+  </dd>
+  <dt>[R3-4]</dt>
+  <dd>
+    Each FDO MUST specify its FDO type via the designated attribute <i>0.FDO/Type</i>  in its FDO Record. To link
+    multiple FDO types, the attribute <i>0.FDO/Type</i>  MAY be repeated multiple times in the FDO Record.
+    <ul>
+      <li>
+        The first element of such a tuple representing the FDO’s type is either the PID <i>0.FDO/Type</i> , or the string
+        FDO_Type.
+      </li>
+      <li>
+        The <i>0.FDO/Type</i>  attribute follows the attribute referencing mechanism as defined in section 7.4.
+      </li>
+    </ul>
+  </dd>
+  <dt>[R3-5]</dt>
+  <dd>Each FDO MUST contain the designated attribute <i>0.FDO/Data</i>  in its FDO Record at least once. The <i>0.FDO/Data</i> 
+    attribute points to data associated with the FDO.
+    <ul>
+      <li>
+        The first element of such a tuple representing the FDO’s data is either the PID <i>0.FDO/Data</i> , or the string
+        FDO_Data.
+      </li>
+      <li>
+        The <i>0.FDO/Data</i>  attribute follows the attribute referencing mechanism as defined in section 7.4.
+      </li>
+    </ul>
+  </dd>
+</dl>
