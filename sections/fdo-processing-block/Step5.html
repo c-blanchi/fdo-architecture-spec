@@ -1,12 +1,12 @@
 <p>This step determines whether the given FDO record’s type is that which the client expects while processing the FDO.
-  It assumes that Step 4 was completed and that its status indicates that a 0.FDO/Type field is present.</p>
+  It assumes that <a href="#step4">[Step 4]</a> was completed and that its status indicates that a 0.FDO/Type field is present.</p>
 <p>There are many reasons to perform this step. It could be that the client software is only capable of processing
   limited types of information and the quicker it can determine whether the FDO is appropriate the better. </p>
 <p>Also, the accessing client may determine when to check for an FDO’s type as it could be using different hints to
   determine whether or not the FDO is appropriate. </p>
 <dl>
   <dt>Inputs</dt>
-  <dd>This step expects that Step 4 had a FDO Root Profile validation status of COMPLETE, REQUIRED_FIELDS, TYPE_ONLY and
+  <dd>This step expects that <a href="#step4">[Step 4]</a> had a FDO Root Profile validation status of COMPLETE, REQUIRED_FIELDS, TYPE_ONLY and
     two inputs:
     <ul>
       <li>The list of types that the client is looking for. This is called the expected FDO Type list. It can be empty

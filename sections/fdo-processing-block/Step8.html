@@ -1,10 +1,12 @@
-The step requires that Step 7 successfully validated one or more profiles resulting in one or more sets of
+The step requires that <a href="#step7">[Step 7]</a> successfully validated one or more profiles resulting in one or
+more sets of
 attributes. For each set of attributes, the FDO Attribute Processing checks each attribute’s type - value pair to
 determine if the value is appropriate given its type. This validation process will greatly vary in complexity
 depending on the specific type.
 <dl>
   <dt>Inputs</dt>
-  <dd>The inputs consist of the list of Validated_Profile from Step 7 with a status of VALID, PARTIALLY_VALID. . Note
+  <dd>The inputs consist of the list of Validated_Profile from <a href="#step7">[Step 7]</a> with a status of VALID,
+    PARTIALLY_VALID. . Note
     that this step could be used with any attribute list that would need validation.
   </dd>
   <dt>Outputs</dt>
@@ -34,13 +36,12 @@ depending on the specific type.
         <p>If the FDO Attribute Processing does not have validation rules for the type, it will attempt to acquire them.
           The FDO Attribute Process has the following options:</p>
         <ul>
-          <li>Assume that the PID could be that of an FDO. Start with Step 1 using the type identifier as the potential
-            PID. The Expected Type List in Step 5 should be 0.FDO/AttributeDef, and the Expected Profile List in Step 6
-            be
-            0.FDO/AttributeDefinitionProfile, finally, one all the steps are completed, extract the validation rules. If
-            it succeeds it will retry operation 1 above. If it fails at any point, the FDO Attribute Process will set
-            the
-            attribute status to NOT_VALIDATED and wi</li>
+          <li>Assume that the PID could be that of an FDO. Start with S<a href="#step1">[Step 1]</a> using the type
+            identifier as the potential PID. The Expected Type List in <a href="#step5">[Step 5]</a> should be
+            0.FDO/AttributeDef, and the Expected Profile List in <a href="#step6">[Step 6]</a> be
+            0.FDO/AttributeDefinitionProfile, finally, one all the steps are completed, extract the validation rules.
+            If it succeeds it will retry operation 1 above. If it fails at any point, the FDO Attribute Process will set
+            the attribute status to NOT_VALIDATED and wi</li>
 
           <li>The type has a PID that the client knows points to a type registry. It tries to acquire the rules and
             retries operation 1 above.</li>
