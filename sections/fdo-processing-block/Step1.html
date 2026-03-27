@@ -1,4 +1,3 @@
-<h3>Description</h3>
 <p>This step MUST determine if the provided string is an identifier, whether it is potentially resolvable and how. This
   MAY be achieved using any technical solution such as a regular expression based analysis aware of the well known
   resolvable ID systems. This process MAY result in false positives, but MUST avoid false negatives.
@@ -6,7 +5,6 @@
 <dl>
   <dt>Inputs</dt>
   <dd>This input is an arbitrary string.</dd>
-
   <dt>Outputs</dt>
   <dd>
     <ul>
@@ -15,8 +13,7 @@
         <ul>
           <li>A syntactically valid identifier. (There may be multiple outcomes)</li>
           <li>A ResolverList with 0 or more resolvers by name in order of probability. The resolver SHOULD be identified
-            as
-            an FDO.</li>
+            as an FDO.</li>
         </ul>
       </li>
       If the analysis fails the processing steps, it will do so as follows:
@@ -30,27 +27,25 @@
       These
       FDOs will include information about the identifier syntax and resolvers.</p>
 
-    <b>Example</b>
-
     <aside class="example" title="The input string is https://dx.doi.org/10.500/123">
       <p>Step 1 would process this as known DOI. There would be two instances of the Identifier-Resolvers structure:</p>
       <ul>
         <li>identifier: https://dx.doi.org/10.500/123 </li>
         <li>ResolverList includes: </li>
         <ul>
-          <li>- 0.FDO/HTTP_GET.</li>
-          <li>- Identifier: 10.500/123</li>
-          <li>-The ResolversList includes: 0.FDO/HDL_RESOLVER,0.FDO/HDL_WEB_RESOLVER</li>
+          <li>0.FDO/HTTP_GET.</li>
+          <li>Identifier: 10.500/123</li>
+          <li>The ResolversList includes: 0.FDO/HDL_RESOLVER,0.FDO/HDL_WEB_RESOLVER</li>
         </ul>
       </ul>
     </aside>
 
-    <aside class="example" title="The input string is https://www.ACME.org/fdo/123-245-232"></aside>
-    <p>Step 1 would determine that this is a valid URI and that it could be an FDO because of the “fdo” in path name.
-      But while “123-245-232” looks like an identifier, no known resolver can be found. Step one would generate an
-      identifier-resolver with the following values:</p>
-    Identifier: https://www.ACME.org/fdo/123-245-232
-    The resolver 0.FDO/HTTP_GET
+    <aside class="example" title="The input string is https://www.ACME.org/fdo/123-245-232">
+      <p>Step 1 would determine that this is a valid URI and that it could be an FDO because of the “fdo” in path name.
+        But while “123-245-232” looks like an identifier, no known resolver can be found. Step one would generate an
+        identifier-resolver with the following values:</p>
+      Identifier: https://www.ACME.org/fdo/123-245-232
+      The resolver 0.FDO/HTTP_GET
     </aside>
   </dd>
 </dl>
