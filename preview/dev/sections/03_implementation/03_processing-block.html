@@ -1,5 +1,32 @@
 <h3>Processing Block</h3>
 <p>
-    Take the processing steps <b>[S-1] - [S-11]</b> from Chapter 4 and reformulate them as
-    implementation-specific pseudocode.
+    Each implementation MUST describe how they implement each of the processing steps <b>[S-1] - [S-11]</b> in Chapter 4
+    with as much infomration as possible given the implementation-specific capabilities and/or limitations.  
 </p>
+<p>
+    Minor variations in the inputs and outputs of each steps are acceptable SHOULD they fall within the intents of each step.
+</p>
+<p>
+    It is anticipated that not all implementations will be able to fully replicate each of the defined processing steps.
+    An implementation MAY "short-circuit" steps when completing the implementation template.  
+    When short-circuiting one of more steps, the implementation MUST use the inputs of the first step it short circuits and 
+    return the outputs of the last step it short circuits.  For example, if the implemenation does not implement step 2,3 and 4, 
+    it will specify a step 2-3-4 that has for intput the inputs of step 2 and for output the outputs of step 4.
+</p>
+<p>
+    For the purpose of clarification within the implementation template, an explanation MUST be provided as to why the steps 
+    where short circuited. Specifically, the implemenation SHOULD include all of its implicit assumptions that correspond to 
+    the behaviors and FDO building blocks specified within the short circuited steps.
+</p>
+<p>  
+    Completed processing block implemenation template are targetted at the following communities:
+    <ul>
+        <li><a>FDO</a> system developers that want to document their implementations and be able to characterize its compatibility with the FDO specifications.</li>
+        <li><a>FDO</a> system developers that want to understand how to implement an <a>FDO</a> solutions for a particular set of technologies.</li>
+        <li>Cross <a>FDO</a> gateways developers that need to enable for the free flow of <a>FDO</a>s from one implementation to another </li>
+        <li>The FDO Forum for associating a standardized functional description and capability for each different <a>FDO</a> Implementation.</li>
+    </ul>
+    It is anticipated that these implementation templates will often be used by AI services to build the needed interoperable pathways 
+    accross any of these various implementations.
+</p>
+
