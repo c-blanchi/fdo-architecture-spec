@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <link rel="stylesheet" href="css/fairdo-custom.css">
     <meta charset="utf-8" />
     <meta name="color-scheme" content="light dark">
     <title>FAIR Digital Objects Architecture Specification</title>
@@ -195,9 +196,7 @@
         technology-independent framework for representing and managing digital and physical <a>resources</a>
         in a machine-actionable manner. FDOs are persistent bundles of information identified by
         globally unique, persistent, and resolvable identifiers (PIDs) that resolve to structured
-        FDO Records defined by profiles and registered attributes.
-      </p>
-      <p>
+        FDO Records defined by explicit profiles and registered attributes.
         The specification describes the core building blocks of FDOs
         and defines normative requirements to ensure predictability, interoperability, and long-term persistence.
         By separating abstract object semantics from concrete implementation technologies,
@@ -210,29 +209,30 @@
     <section id="sotd">
       <p>
         This document is an official publication of the FDO Forum.
-    </p>
+        This document version has the status of a draft work document, according to the FDO Forum process.
+        This document will undergo the FDO Forum process for official documents.
+      </p>
     </section>
     <section class="informative" data-include="sections/00_introduction/00-Intro.html"></section>
     <section class="informative" data-include="sections/00_introduction/01-How-To-Read-This-Document.html"></section>
     <section class="informative" data-include="sections/00_introduction/02-High-Level-Overview.html"></section>
 
     <section data-dfn-for="building-blocks" class="normative">
-      <h2><dfn data-lt="FDO type system">FDO Building Blocks</dfn></h2>
+      <h2>FDO Building Blocks</h2>
       <section data-include="sections/01_fdo-building-block/01-PID.html" id="pid"></section>
       <section data-include="sections/01_fdo-building-block/02-Granularity.html" id="granularity"></section>
       <section data-include="sections/01_fdo-building-block/03-FDO-Records.html" id="records"></section>
       <section data-include="sections/01_fdo-building-block/04-FDO-Profiles.html" id="profiles"></section>
       <section data-include="sections/01_fdo-building-block/05-Attributes.html" id="attributes"></section>
-      <section data-include="sections/01_fdo-building-block/06-Syntax-Def.html" id="syntax-def"></section>
-      <section data-include="sections/01_fdo-building-block/07-Referencing.html" id="advanced-ref"></section>
+      <section data-include="sections/01_fdo-building-block/06-Extensions.html" id="extensions"></section>
       <section data-include="sections/01_fdo-building-block/08-Validation.html" id="validation"></section>
-      <section data-include="sections/01_fdo-building-block/09-Mandatory-Attributes.html" id="mandatory-attributes"></section>
       <section data-include="sections/01_fdo-building-block/10-FDO-Types.html" id="fdo-types"></section>
       <section data-include="sections/01_fdo-building-block/11-Updating.html" id="updating"></section>
+      <section data-include="sections/01_fdo-building-block/12-FDO-Operations.html" id="operations"></section>
     </section>
 
     <section data-dfn-for="generic-processing">
-      <h2>Generic FDO Processing</h2>
+      <h2 id="generic_processing">Generic FDO Processing</h2>
       <section data-include="sections/02_fdo-processing-block/Introduction.html" id="processing-intro"></section>
       <section data-include="sections/02_fdo-processing-block/Step1.html" id="step1"></section>
       <section data-include="sections/02_fdo-processing-block/Step2.html" id="step2"></section>
@@ -251,7 +251,6 @@
       <h2>Implementation Template</h2>
       <section data-include="sections/03_implementation/01_introduction.html" id="implementation-intro"></section>
       <section data-include="sections/03_implementation/02_building-blocks.html" id="implementation-building-blocks"></section>
-      <section data-include="sections/03_implementation/03_processing-block.html" id="implementation-processing-block"></section>
     </section>
 
     <section id="conformance" data-include="sections/04-Conformance.html"></section>
